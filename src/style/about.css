@@ -1,0 +1,59 @@
+ :root {
+     --angle: 45deg;
+     --opacity: 0.5;
+ }
+
+ .runline {
+
+     /* border-radius: 30px; */
+     --border-size: 1px;
+     border: var(--border-size) solid transparent;
+     /* Paint an image in the border */
+     border-image: conic-gradient(from var(--angle),
+             #3779f5a9 0deg 90deg,
+             #ffffff 90deg 180deg,
+             #3779f5ac 180deg 270deg,
+             #3779f5ac 270deg 360deg) 1 stretch;
+     border-radius: 50px;
+ }
+
+
+ @supports (background: paint(houdini)) {
+     @property --opacity {
+         syntax: "<number>";
+         initial-value: 0.5;
+         inherits: false;
+     }
+
+     @property --angle {
+         syntax: "<angle>";
+         initial-value: 0deg;
+         inherits: false;
+     }
+
+     @keyframes opacityChange {
+         to {
+             --opacity: 1;
+         }
+     }
+
+     @keyframes rotate {
+         to {
+             --angle: 360deg;
+         }
+     }
+
+     .runline {
+         animation: rotate 4s linear infinite, opacityChange 3s infinite alternate;
+     }
+
+
+ }
+
+ .link {
+     box-shadow: 0 0 0 0 theme("colors.primary");
+ }
+
+ .link:hover {
+     box-shadow: 0px 0px 0px 1000px theme("colors.primary");
+ }

@@ -1,0 +1,10 @@
+{
+  "nuxt.isNuxtApp": false,
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#4B105E",
+    "titleBar.activeBackground": "#681784",
+    "titleBar.activeForeground": "#FDFAFE"
+  }
+}
